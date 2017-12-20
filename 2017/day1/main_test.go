@@ -28,7 +28,7 @@ func TestCapchaSumValidatesLastExample(t *testing.T) {
 func TestCapchaSumValidatesSecondPart(t *testing.T) {
 	input := "91212129"
 	result, _ := CaptchaSum(input, len(input))
-	assert.Equal(t, result, 9)
+	assert.Equal(t, result, 27)
 }
 
 func TestCaptchaSumRaisesErrorWhenInputIsNotADigit(t *testing.T) {

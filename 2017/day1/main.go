@@ -3,20 +3,18 @@ package main
 import (
 	"strconv"
 	"fmt"
-	"os"
 )
 
 func CaptchaSum(input string, step int) (int, error) {
 	sum := 0
 
-	_, err := strconv.Atoi(string(input))
-	if err != nil {
-		fmt.Fprintln(os.Stderr, "ERROR: %s is not a digit", input)
-		return sum, err
-	}
-
 	for i := range input {
-		if input[i] == input[(i+1)%len(input)] {
+		if input[i] == input[(i+step)%len(input)] {
+			_, err := strconv.Atoi(string(input[i]))
+			if err != nil {
+				return sum, err
+			}
+
 			sum += int(input[i] - '0')
 		}
 	}
