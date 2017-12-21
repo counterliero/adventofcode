@@ -7,28 +7,28 @@ import (
 
 func TestCapchaSumValidatesFirstExample(t *testing.T) {
 	result, _ := CaptchaSum("1122", 1)
-	assert.Equal(t, result, 3)
+	assert.Equal(t, 3, result)
 }
 
 func TestCapchaSumValidatesSecondExample(t *testing.T) {
 	result, _ := CaptchaSum("1111", 1)
-	assert.Equal(t, result, 4)
+	assert.Equal(t, 4, result)
 }
 
 func TestCapchaSumValidatesThirdExample(t *testing.T) {
 	result, _ := CaptchaSum("1234", 1)
-	assert.Equal(t, result, 0)
+	assert.Equal(t, 0, result)
 }
 
 func TestCapchaSumValidatesLastExample(t *testing.T) {
 	result, _ := CaptchaSum("91212129", 1)
-	assert.Equal(t, result, 9)
+	assert.Equal(t, 9, result)
 }
 
 func TestCapchaSumValidatesSecondPart(t *testing.T) {
 	input := "91212129"
 	result, _ := CaptchaSum(input, len(input))
-	assert.Equal(t, result, 27)
+	assert.Equal(t, 27, result)
 }
 
 func TestCaptchaSumRaisesErrorWhenInputIsNotADigit(t *testing.T) {
