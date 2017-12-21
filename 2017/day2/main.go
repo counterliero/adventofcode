@@ -3,6 +3,7 @@ package main
 import (
 	"strings"
 	"fmt"
+	"os"
 )
 
 func CheckSum(nums []string) int {
@@ -32,5 +33,10 @@ func main() {
 	fmt.Println(CheckSum(input))
 
 	// Part 2
-	fmt.Println(CheckSumDivide(input))
+	res := CheckSumDivide(input)
+	if res == -1 {
+		fmt.Fprintln(os.Stderr, "ERROR: input is invalid")
+		os.Exit(1)
+	}
+	fmt.Println(res)
 }

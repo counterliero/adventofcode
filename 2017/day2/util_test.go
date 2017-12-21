@@ -25,7 +25,12 @@ func TestGetIntegersGetsValuesFromStringList(t *testing.T) {
 	assert.Equal(t, expected, GetIntegers(input))
 }
 
-func TestDivide(t *testing.T) {
-	input := ReadLinesFromFile("input_test_div.txt")
-	assert.Equal(t, 9, CheckSumDivide(input))
+func TestDivideDoesThings(t *testing.T) {
+	input := []int{5, 9, 2, 8}
+	assert.Equal(t, 4, Divide(input))
+}
+
+func TestDivideDeterminesWhenThereIsNoResult(t *testing.T) {
+	input := []int{5, 4}
+	assert.Equal(t, -1, Divide(input))
 }

@@ -72,5 +72,5 @@ func Divide(nums []int) (int) {
 			}
 		}
 	}
-	panic("That did not work")
+	return -1
 }
